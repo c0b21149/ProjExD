@@ -13,8 +13,8 @@ for i in range(count):
     sub_moji = random.sample(moji_lst,sub)
     dis_moji = random.sample(sub_moji,(sub-miss))
     miss_moji = list(set(sub_moji)^set(dis_moji))
-    num_ans = input("対象文字:"+"\n"+str(sub_moji)+"\n"+"=="*30+
-                "\n"+"表示文字:"+"\n"+str(dis_moji)+"\n\n"+"欠損文字はいくつあるでしょうか?:")
+    num_ans = input("対象文字:\n"+str(sub_moji)+"\n"+"=="*30+
+                "\n"+"表示文字:\n"+str(dis_moji)+"\n\n"+"欠損文字はいくつあるでしょうか?:")
     if int(num_ans) == miss:
         print("正解です。具体的に欠損文字を1つずつ入力してください")
         moji_ans1 = input("１つ目の文字を入力してください:")
