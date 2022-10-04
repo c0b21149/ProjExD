@@ -7,7 +7,10 @@ from tkinter.tix import COLUMN
 def click_number(event):
     btn = event.widget
     num = int(btn["text"])
-    tkm.showinfo(f"{num}",f"{num}のボタンが押されました")
+    #tkm.showinfo(f"{num}",f"{num}のボタンが押されました")
+
+    #練習5
+    entry.insert(0,num)
 
 #練習1
 root = tk.Tk()
