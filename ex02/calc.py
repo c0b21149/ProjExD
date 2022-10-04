@@ -1,6 +1,12 @@
-from gettext import bind_textdomain_codeset
-from logging import root
 import tkinter as tk
+import tkinter.messagebox as tkm
+
+
+#練習3
+def click_number(event):
+    btn = event.widget
+    num = int(btn["text"])
+    tkm.showinfo(f"{num}",f"{num}のボタンが押されました")
 
 #練習1
 root = tk.Tk()
@@ -10,11 +16,11 @@ root.geometry("300x500")
 r,c = 0,0
 for i,num in enumerate(range(9,-1,-1),1):
     btn = tk.Button(root,text=f"{num}",font=("",30),width=4,height=2)
+    btn.bind("<1>",click_number)
     btn.grid(row=r,column=c)
     c += 1
     if i%3 == 0:
         r += 1
         c = 0
-
 
 root.mainloop()
