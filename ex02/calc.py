@@ -12,6 +12,12 @@ def click_number(event):
     #練習5
     entry.insert(tk.END,num)
 
+#練習7,関数
+def click_equal(event):
+    eqn = entry.get()
+    res = eval(eqn)
+    entry.delete(0,tk.END)
+    entry.insert(tk.END,res)
 
 #練習1
 root = tk.Tk()
@@ -33,5 +39,10 @@ for i,num in enumerate(numbers+operators,1):
     if i%3 == 0:
         r += 1
         c = 0
+
+#練習7,実装
+btn = tk.Button(root,text=f"=",font=("",30),width=4,height=2)
+btn.bind("<1>",click_equal)
+btn.grid(row=r,column=c)
 
 root.mainloop()
