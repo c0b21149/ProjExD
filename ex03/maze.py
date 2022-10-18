@@ -32,10 +32,7 @@ def main_proc():
         mx, my = mx+delta[key][0], my+delta[key][1]
         cx, cy = mx*100+50, my*100+50
         #画像変更
-        if key == "Up":
-            tori = tk.PhotoImage(file = ud_png)
-            canv.create_image(cx,cy,image=tori,tag="tori")
-        if key == "Down":
+        if key == "Up" or key == "Down":
             tori = tk.PhotoImage(file = ud_png)
             canv.create_image(cx,cy,image=tori,tag="tori")
         if key == "Right":
