@@ -9,6 +9,12 @@ def key_up(event):
     global key
     key = ""
 
+def count_up():
+    global tmr
+    tmr += 1
+    label["text"] = tmr
+    root.after(1000,count_up)
+
 #練習７
 def main_proc():
     global cx,cy
@@ -48,6 +54,11 @@ def main_proc():
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("迷えるこうかとん")#練習１
+
+    tmr = 0
+    label = tk.Label(root, font=(" ",40),anchor=tk.CENTER)
+    label.pack()
+    root.after(1000, count_up)
 
     #練習２
     canv = tk.Canvas(root,width=1500,height=900,bg="black")
