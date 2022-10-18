@@ -22,7 +22,6 @@ def main_proc():
         "Right":[+1,0],
     }
 
-
     if maze_lst[my+delta[key][1]][mx+delta[key][0]] == 0:
         mx, my = mx+delta[key][0], my+delta[key][1]
         cx, cy = mx*100+50, my*100+50
