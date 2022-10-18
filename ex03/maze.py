@@ -33,16 +33,16 @@ def main_proc():
         cx, cy = mx*100+50, my*100+50
         #画像変更
         if key == "Up":
-            tori = tk.PhotoImage(file = "ex03/fig/3.png")
+            tori = tk.PhotoImage(file = ud_png)
             canv.create_image(cx,cy,image=tori,tag="tori")
         if key == "Down":
-            tori = tk.PhotoImage(file = "ex03/fig/3.png")
+            tori = tk.PhotoImage(file = ud_png)
             canv.create_image(cx,cy,image=tori,tag="tori")
         if key == "Right":
-            tori = tk.PhotoImage(file = "ex03/fig/2.png")
+            tori = tk.PhotoImage(file = r_png)
             canv.create_image(cx,cy,image=tori,tag="tori")
         if key == "Left":
-            tori = tk.PhotoImage(file = "ex03/fig/5.png")
+            tori = tk.PhotoImage(file = l_png)
             canv.create_image(cx,cy,image=tori,tag="tori")
     else: #壁に向かって進もうとする場合
         tori = tk.PhotoImage(file = "ex03/fig/0.png")
@@ -54,6 +54,10 @@ def main_proc():
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("迷えるこうかとん")#練習１
+
+    ud_png = "ex03/fig/3.png"
+    r_png = "ex03/fig/2.png"
+    l_png = "ex03/fig/5.png"
 
     #カウントアップ
     tmr = 0
