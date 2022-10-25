@@ -113,7 +113,7 @@ def main():
         
         #爆弾のスピード
         t_a = time.time()
-        if math.floor(t_sta-t_a) % 5 == 0:
+        if math.floor(t_sta-t_a) % 5 == 0: #int()でも可
             time.sleep(1)
             vx *= 1.5
             vy *= 1.5
@@ -127,7 +127,7 @@ def main():
         #衝突判定
         if tori_rct.colliderect(bomb_rct) or tori_rct.colliderect(bomb_rct1):
             t_end = time.time()
-            t = math.floor(t_end - t_sta)
+            t = math.floor(t_end - t_sta) #int()でも可
             text1 = font.render("GAME OVER",True,(255,0,0))
             text2 = font.render(f"score: {t} sec",True,(255,0,0))
             scrn_sfc.blit(text1,(700,450))
