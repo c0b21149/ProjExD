@@ -62,20 +62,40 @@ def main():
         key_states = pg.key.get_pressed()
 
         #こうかとん座標
-        if key_states[pg.K_w]: tori_rct.centery -= 1
-        if key_states[pg.K_s]: tori_rct.centery += 1
-        if key_states[pg.K_a]: tori_rct.centerx -= 1
-        if key_states[pg.K_d]: tori_rct.centerx += 1
+        if key_states[pg.K_w]: 
+            if key_states[pg.K_LSHIFT]:
+                tori_rct.centery -= 2
+            tori_rct.centery -= 1
+        if key_states[pg.K_s]:
+            if key_states[pg.K_LSHIFT]:
+                tori_rct.centery += 2
+            tori_rct.centery += 1
+        if key_states[pg.K_a]:
+            if key_states[pg.K_LSHIFT]:
+                tori_rct.centerx -= 2
+            tori_rct.centerx -= 1
+        if key_states[pg.K_d]:
+            if key_states[pg.K_LSHIFT]:
+                tori_rct.centerx += 2
+            tori_rct.centerx += 1
         yoko,tate = check_bound(tori_rct,scrn_rct)
         if yoko == -1:
             if key_states[pg.K_a]:
+                if key_states[pg.K_LSHIFT]:
+                    tori_rct.centerx += 2
                 tori_rct.centerx += 1
             if key_states[pg.K_d]:
+                if key_states[pg.K_LSHIFT]:
+                    tori_rct.centerx -= 2
                 tori_rct.centerx -= 1
         if tate == -1:
             if key_states[pg.K_w]:
+                if key_states[pg.K_LSHIFT]:
+                    tori_rct.centery += 2
                 tori_rct.centery += 1
             if key_states[pg.K_s]:
+                if key_states[pg.K_LSHIFT]:
+                    tori_rct.centery -= 2
                 tori_rct.centery -= 1
         scrn_sfc.blit(tori_sfc,tori_rct)
 
