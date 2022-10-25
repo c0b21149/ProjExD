@@ -120,7 +120,7 @@ def main():
             vx1 *= 1.5
             vy1 *= 1.5
             lv += 1
-        font = pg.font.SysFont(None,50)
+        font = pg.font.Font(None,50)
         Level = font.render(f"Level{lv}",True,(255,0,0))
         scrn_sfc.blit(Level,(50,50))
 
